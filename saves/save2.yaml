@@ -1,0 +1,41 @@
+---
+difficulty: 6
+word: generation
+wrong_letters:
+- x
+correct_letters:
+- _
+- _
+- _
+- _
+- _
+- a
+- _
+- _
+- _
+- _
+available_letters:
+- b
+- c
+- d
+- e
+- f
+- g
+- h
+- i
+- j
+- k
+- l
+- m
+- "n"
+- o
+- p
+- q
+- r
+- s
+- t
+- u
+- v
+- w
+- "y"
+- z

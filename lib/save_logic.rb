@@ -13,6 +13,7 @@ module SaveLogic
 
   def to_yaml
     YAML.dump({
+      'difficulty' => @difficulty,
       'word' => @word,
       'wrong_letters' => @wrong_letters,
       'correct_letters' => @correct_letters,
@@ -73,6 +74,7 @@ module SaveLogic
   end
 
   def distribute_data(selected_save)
+    @difficulty = selected_save['difficulty']
     @word = selected_save['word']
     @solution = word.split('')
     @available_letters = selected_save['available_letters']

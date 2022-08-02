@@ -1,14 +1,20 @@
 ---
-word: acrobat
+difficulty: 10
+word: inspections
 wrong_letters:
+- a
 - x
 correct_letters:
-- a
 - _
 - _
 - _
 - _
-- a
+- _
+- _
+- _
+- _
+- _
+- _
 - _
 available_letters:
 - b

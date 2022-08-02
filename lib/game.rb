@@ -22,7 +22,6 @@ class Game
   end
 
   def play_game
-    puts display_menu_instructions
     puts display_menu
 
     option = option_selection
@@ -44,6 +43,8 @@ class Game
     @solution = word.split('')
     @solution.each { correct_letters.push('_') }
 
+    @difficulty = select_difficulty
+
     player_turns('new_game', word)
     end_game
   end
@@ -54,8 +55,21 @@ class Game
     words_list[rand(0..words_list.length)]
   end
 
+  def select_difficulty
+    puts display_difficulty_menu
+    print display_select_option('main_menu')
+
+    difficulty = gets.chomp
+    return 6 if difficulty.match(/^1$/)
+    return 8 if difficulty.match(/^2$/)
+    return 10 if difficulty.match(/^3$/)
+
+    puts display_invalid('option')
+    select_difficulty
+  end
+
   def player_turns(type, word)
-    @guesses_left = 6 - wrong_letters.length
+    @guesses_left = @difficulty - wrong_letters.length
     while @guesses_left != 0
       puts display_game_instructions(type, word)
       puts display_game('correct_letters')

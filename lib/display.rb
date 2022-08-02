@@ -22,7 +22,8 @@ module Display
   def display_invalid(type)
     {
       'guess' => "#{formatting('bold_red', '<!>')} Already tried this letter or it's invalid!",
-      'option' => "#{formatting('bold_red', '<!>')} Invalid Option!",
+      'option' => "#{formatting('bold_red', '<!>')} Invalid option!",
+      'difficulty' => "#{formatting('bold_red', '<!>')} Invalid difficulty!",
       'save_name' => "#{formatting('bold_red', '<!>')} This save name is already taken! Try another one.",
       'selected_save' => "#{formatting('bold_red', '<!>')} This save doesn't exist!."
     }[type]
@@ -42,21 +43,14 @@ module Display
     }[type]
   end
 
-  def display_menu_instructions
-    system 'clear'
-
-    <<~INSTRUCTIONS
+  def display_menu
+    <<~MENU
       <>
       || Welcome to the Hangman game!
       ||
       || How to play Hangman in the console.
       || A random word will be chosen. On each turn, you can guess one letter.
-      || To win, you must find all the letters in the word before using 8 incorrect guesses.
-    INSTRUCTIONS
-  end
-
-  def display_menu
-    <<~MENU
+      || To win, you must find all the letters in the word before you run out of guesses.
       <>
       || 1. New Game
       || 2. Load Game
@@ -94,6 +88,20 @@ module Display
 
       INSTRUCTIONS
     end
+  end
+
+  def display_difficulty_menu
+    system 'clear'
+
+    <<~MENU
+      <>
+      || The game has 3 levels of difficulty, select one of them.
+      ||
+      || #{formatting('bold_red', '1. Hard (6 guesses)')}
+      || #{formatting('bold_yellow', '2. Medium (8 guesses)')}
+      || #{formatting('bold_green', '3. easy (10 guesses)')}
+      <>
+    MENU
   end
 
   def display_saved_games(saves)
