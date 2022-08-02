@@ -45,7 +45,7 @@ module Display
 
   def display_menu
     system 'clear'
-    
+
     <<~MENU
       <>
       || Welcome to the Hangman game!
