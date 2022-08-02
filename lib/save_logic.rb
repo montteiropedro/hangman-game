@@ -41,7 +41,7 @@ module SaveLogic
     puts display_game('loading')
     sleep(1)
 
-    player_turns('load_game', word)
+    player_turns('load_game')
     end_game
   end
 

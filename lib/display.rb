@@ -61,7 +61,7 @@ module Display
     MENU
   end
 
-  def display_game_instructions(type, word)
+  def display_game_instructions(type)
     system 'clear'
 
     if type == 'new_game'
@@ -74,7 +74,7 @@ module Display
         <>
 
       INSTRUCTIONS
-      # Paste this two lines below after line 78 if you want to see what's the random word in game
+      # Paste this two lines above the last '<>' if you want to see what's the random word in game
       # || This game's word is #{formatting('bold_blue', word)}.
       # <>
     elsif type == 'load_game'
@@ -85,10 +85,11 @@ module Display
         || Your #{formatting('bold_blue', "random word")} has been chosen, it has #{formatting('bold_blue', "#{@solution.length} letters")}.
         || You have #{formatting('bold_red', @guesses_left)} guess(es) left. Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
         <>
-        || This game's word is #{formatting('bold_blue', word)}
-        <>
 
       INSTRUCTIONS
+      # Paste this two lines above the last '<>' if you want to see what's the random word in game
+      # || This game's word is #{formatting('bold_blue', word)}.
+      # <>
     end
   end
 

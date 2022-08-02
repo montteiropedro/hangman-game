@@ -45,7 +45,7 @@ class Game
 
     @difficulty = select_difficulty
 
-    player_turns('new_game', word)
+    player_turns('new_game')
     end_game
   end
 
@@ -68,10 +68,10 @@ class Game
     select_difficulty
   end
 
-  def player_turns(type, word)
+  def player_turns(type)
     @guesses_left = @difficulty - wrong_letters.length
     while @guesses_left != 0
-      puts display_game_instructions(type, word)
+      puts display_game_instructions(type)
       puts display_game('correct_letters')
 
       break if player_won?(correct_letters) == 'won'
