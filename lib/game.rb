@@ -43,7 +43,7 @@ class Game
     @solution = word.split('')
     @solution.each { correct_letters.push('_') }
 
-    @difficulty = select_difficulty
+    @lives = select_difficulty
 
     player_turns('new_game')
     end_game
@@ -69,8 +69,8 @@ class Game
   end
 
   def player_turns(type)
-    @guesses_left = @difficulty - wrong_letters.length
-    while @guesses_left != 0
+    @lives_left = @lives - wrong_letters.length
+    while @lives_left != 0
       puts display_game_instructions(type)
       puts display_game('correct_letters')
 
@@ -100,7 +100,7 @@ class Game
     end
 
     if !@solution.include?(@player_guess)
-      @guesses_left -= 1
+      @lives_left -= 1
       wrong_letters.push(@player_guess) unless wrong_letters.include?(@player_guess)
     end
   end
@@ -115,9 +115,9 @@ class Game
   end
 
   def player_won?(final_solution)
-    return 'not_defined' if @guesses_left != 0 && final_solution.include?('_')
-    return 'won' if @guesses_left != 0 && !final_solution.include?('_')
-    return 'lose' if @guesses_left.zero?
+    return 'not_defined' if @lives_left != 0 && final_solution.include?('_')
+    return 'won' if @lives_left != 0 && !final_solution.include?('_')
+    return 'lose' if @lives_left.zero?
   end
 
   def end_game

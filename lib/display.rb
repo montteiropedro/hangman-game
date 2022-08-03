@@ -70,7 +70,7 @@ module Display
         || Welcome player! This is a new game.
         ||
         || Your #{formatting('bold_blue', "random word")} has been chosen, it has #{formatting('bold_blue', "#{@solution.length} letters")}.
-        || You have #{formatting('bold_red', @guesses_left)} guess(es) left. Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
+        || You have #{formatting('bold_red', @lives_left)} guess(es) left. Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
         <>
 
       INSTRUCTIONS
@@ -83,7 +83,7 @@ module Display
         || Welcome player! You loaded a game.
         ||
         || Your #{formatting('bold_blue', "random word")} has been chosen, it has #{formatting('bold_blue', "#{@solution.length} letters")}.
-        || You have #{formatting('bold_red', @guesses_left)} guess(es) left. Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
+        || You have #{formatting('bold_red', @lives_left)} guess(es) left. Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
         <>
 
       INSTRUCTIONS
@@ -100,9 +100,9 @@ module Display
       <>
       || The game has 3 levels of difficulty, select one of them.
       ||
-      || #{formatting('bold_red', '1. Hard (6 guesses)')}
-      || #{formatting('bold_yellow', '2. Medium (8 guesses)')}
-      || #{formatting('bold_green', '3. easy (10 guesses)')}
+      || #{formatting('bold_red', '1. Hard (6 lives)')}
+      || #{formatting('bold_yellow', '2. Medium (8 lives)')}
+      || #{formatting('bold_green', '3. easy (10 lives)')}
       <>
     MENU
   end

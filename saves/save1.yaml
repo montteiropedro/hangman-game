@@ -1,9 +1,7 @@
 ---
-difficulty: 10
-word: inspections
-wrong_letters:
-- a
-- x
+lives: 6
+word: advocacy
+wrong_letters: []
 correct_letters:
 - _
 - _
@@ -13,10 +11,8 @@ correct_letters:
 - _
 - _
 - _
-- _
-- _
-- _
 available_letters:
+- a
 - b
 - c
 - d
@@ -39,5 +35,6 @@ available_letters:
 - u
 - v
 - w
+- x
 - "y"
 - z
