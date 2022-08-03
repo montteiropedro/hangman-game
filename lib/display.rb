@@ -52,7 +52,7 @@ module Display
       ||
       || How to play Hangman in the console.
       || A random word will be chosen. On each turn, you can guess one letter.
-      || To win, you must find all the letters in the word before you run out of guesses.
+      || To win, you must find all the letters in the word before you run out of life.
       <>
       || 1. New Game
       || 2. Load Game
