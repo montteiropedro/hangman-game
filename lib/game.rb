@@ -129,7 +129,9 @@ class Game
     print display_game('play_again?')
     option = gets.chomp
 
-    Game.new if option.match(/y/i)
+    return Game.new if option.match(/y/i)
+
+    puts display_game('goodbye')
   end
 end
 

@@ -64,33 +64,22 @@ module Display
   def display_game_instructions(type)
     system 'clear'
 
-    if type == 'new_game'
-      <<~INSTRUCTIONS
-        <>
-        || Welcome player! This is a new game.
-        ||
-        || Your #{formatting('bold_blue', "random word")} has been chosen, it has #{formatting('bold_blue', "#{@solution.length} letters")}.
-        || You have #{formatting('bold_red', @lives_left)} guess(es) left. Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
-        <>
+    type_holder = 'new game' if type == 'new_game'
+    type_holder = 'loaded game' if type == 'load_game'
 
-      INSTRUCTIONS
-      # Paste this two lines above the last '<>' if you want to see what's the random word in game
-      # || This game's word is #{formatting('bold_blue', word)}.
-      # <>
-    elsif type == 'load_game'
-      <<~INSTRUCTIONS
-        <>
-        || Welcome player! You loaded a game.
-        ||
-        || Your #{formatting('bold_blue', "random word")} has been chosen, it has #{formatting('bold_blue', "#{@solution.length} letters")}.
-        || You have #{formatting('bold_red', @lives_left)} guess(es) left. Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
-        <>
+    <<~INSTRUCTIONS
+      <>
+      || Welcome player! This is a #{type_holder}.
+      ||
+      || Your #{formatting('bold_blue', 'random word')} has been chosen, it has #{formatting('bold_blue', "#{@solution.length} letters")}.
+      || Wrong guesses: #{formatting('bold_red', wrong_letters.join(', '))}.
+      || lives left: #{formatting('bold_red', @lives_left)}.
+      <>
 
-      INSTRUCTIONS
-      # Paste this two lines above the last '<>' if you want to see what's the random word in game
-      # || This game's word is #{formatting('bold_blue', word)}.
-      # <>
-    end
+    INSTRUCTIONS
+    # Paste this two lines above the last '<>' if you want to see what's the random word in game
+    # || This game's word is #{formatting('bold_blue', word)}.
+    # <>
   end
 
   def display_difficulty_menu
