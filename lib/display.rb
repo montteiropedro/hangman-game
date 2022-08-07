@@ -44,7 +44,7 @@ module Display
   end
 
   def display_menu
-    system ('cls') || system('clear')
+    system('cls') || system('clear')
 
     <<~MENU
       <>
@@ -62,7 +62,7 @@ module Display
   end
 
   def display_game_instructions(type)
-    system ('cls') || system('clear')
+    system('cls') || system('clear')
 
     type_holder = 'new game' if type == 'new_game'
     type_holder = 'loaded game' if type == 'load_game'
@@ -83,7 +83,7 @@ module Display
   end
 
   def display_difficulty_menu
-    system ('cls') || system('clear')
+    system('cls') || system('clear')
 
     <<~MENU
       <>
@@ -97,7 +97,7 @@ module Display
   end
 
   def display_saved_games(saves)
-    system ('cls') || system('clear')
+    system('cls') || system('clear')
 
     puts "\n<>"
     puts '|| Select your save.'
